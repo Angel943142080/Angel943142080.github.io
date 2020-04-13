@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #vie {
+            position: relative;
+        }
+
+        #pic {
+            position: relative;
+            height: 500px;
+        }
+
+        #pic img {
+            width: 800px;
+            height: 500px;
+            opacity: 0;
+            position: absolute;
+        }
+
+        #btn img {
+            width: 157px;
+            height: 100px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vie">
+        <div id="pic">
+            <img src="images/a.jpg" alt="">
+            <img src="images/b.jpg" alt="">
+            <img src="images/c.jpg" alt="">
+            <img src="images/d.jpg" alt="">
+            <img src="images/e.jpg" alt="">
+        </div>
+        <div id="btn">
+            <img src="images/a.jpg" alt="">
+            <img src="images/b.jpg" alt="">
+            <img src="images/c.jpg" alt="">
+            <img src="images/d.jpg" alt="">
+            <img src="images/e.jpg" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    var pics = pic.children;
+    var btns = btn.children;
+    var x = 0;
+    pics[x].style.opacity = 1;
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].index = i;
+        btns[i].onclick = function () {
+            pics[x].style.opacity = 0;
+            pics[this.index].style.opacity = 1;
+            x = this.index;
+        }
+    }
+</script>
+
+</html>

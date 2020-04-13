@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #view {
+            width: 400px;
+            border: solid 1px red;
+            overflow: hidden;
+        }
+
+        #banner img {
+            width: 400px;
+            float: left;
+        }
+
+        #banner {
+            width: 1600px;
+            overflow: hidden;
+            transition: all .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="view">
+        <div id="banner">
+            <img src="images/a.jpg" alt="">
+            <img src="images/b.jpg" alt="">
+            <img src="images/c.jpg" alt="">
+            <img src="images/a.jpg" alt="">
+        </div>
+    </div>
+    <button id="next">下一张</button>
+</body>
+<script>
+    var x = 0;
+    var flag = true;
+    next.onclick = function () {
+        var flag = false;
+        x++;
+        banner.style.marginLeft = -400 * x + "px";
+    }
+    banner.addEventListener("transitionend", function () {
+        if (x == 3) {
+            banner.style.transition = "all 0";
+            banner.style.marginLeft = 0;
+            x=0;
+            setTimeout(function () {
+                banner.style.transition = "all .5s";
+            }, 16.7)
+        }
+        var flag = true;
+    })
+</script>
+
+</html>

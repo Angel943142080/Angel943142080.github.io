@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+    btn.onclick = function () {  //事件处理函数
+        this.style.fontSize = "50px"
+    }
+    // btn.onclick()
+    // btn.addEventListener("click", function () { //事件处理函数
+
+    // })
+
+    // btn.onclick = function () {  //事件处理函数
+    //     function F() {
+    //         this.style.fontSize = "50px";
+    //     }
+    //     F()
+    // }
+
+    // var obj = {
+    //     name: "veblen",
+    //     age: "20",
+    //     say: function () {  //对象方法
+    //         alert(this.name)
+    //     }
+    // }
+    // obj.say();
+
+    var obj = {
+        name: "veblen",
+        age: "20",
+        say: function () {  //对象方法
+            function F2(){
+                console.log(this);
+            }
+            F2()
+        }
+    }
+    // obj.say;
+    var F = obj.say;
+    F();
+
+    // window
+    function Person(){
+        this.name  = "veblen";
+        this.say = function(){
+            alert(this.name)
+        }
+    }
+</script>
+
+</html>

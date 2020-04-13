@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="btn">
+        <button>1</button1>
+            <button>2</button2>
+                <button>3</button3>
+                    <button>4</button4>
+    </div>
+</body>
+<script>
+    var x = 0;
+    var btns = btn.children;
+    // 初始化状态
+    btns[0].style.color = "red";
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].index = i;
+
+        btns[i].onclick = function () {
+            // alert(this.index)
+            console.log(this);
+            btns[x].style.color = "black";
+            this.style.color = "pink";
+            x = this.index;
+        }
+    }
+</script>
+
+</html>

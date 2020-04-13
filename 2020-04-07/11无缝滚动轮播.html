@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #view{
+            width:400px;
+            border:5px solid black;
+            overflow: hidden;
+        }
+        #banner img{
+            width:400px;
+            float:left;
+        }
+        #banner{
+            width:1600px;
+            /* 清除浮动 */
+            overflow: hidden;
+            transition: all .5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        view相当于是窗口
+        banner需要展示的内容
+     -->
+    <div id="view">
+        <div id="banner">
+            <img src="images/a.jpg" alt="">
+            <img src="images/b.jpg" alt="">
+            <img src="images/c.jpg" alt="">
+            <img src="images/a.jpg" alt="">
+        </div>
+    </div>
+    <button id="next">下一张</button>
+</body>
+<script>
+
+    var x=0;
+    var flag=true;
+
+    next.onclick=function(){
+
+        // 如果门是开的  就进去
+        if(flag){
+            // 关门
+            flag=false;
+            x++;
+            banner.style.marginLeft=-400*x+"px";
+        }
+
+    }
+
+    banner.addEventListener("transitionend",function(){
+
+        if(x==3){//到达假的第一张
+            
+            // 瞬间回到真的第一张
+            banner.style.transition="all 0s";
+            banner.style.marginLeft=0;
+            x=0;
+            
+            setTimeout(function(){
+                // 下一帧正常添加过渡
+                banner.style.transition="all .5s";
+            },16.7)
+
+        }
+
+        // 开门
+        flag=true;
+
+    })
+    
+</script>
+</html>

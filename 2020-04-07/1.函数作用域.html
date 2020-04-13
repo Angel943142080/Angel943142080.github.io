@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // var x = 10; //全局作用域
+    // function F() {
+    //     var x = 20;
+    //     console.log(x);
+    // }
+    // F()
+    // var x = 10;
+    // function F1() {
+    //     var x = 30;
+    //     function F2() {
+    //         console.log(x);
+    //     }
+    //     F2()
+    // }
+    // F1();
+    // var x = 100;
+    // function F() {
+    //     console.log(x);
+    // }
+    // function F2() {
+    //     var x = 50;
+    //     F();
+    // }
+    // F2();
+    // var x = 20;
+    // function F(x) {
+    //     console.log(x);
+    // }
+    // function F2() {
+    //     var x = 30;
+    //     F(x);
+    // }
+    // F2()
+    var x = 10;
+    function F(a) {
+        var x = 20;
+        a();
+        console.log(a);
+    }
+    // F()
+    F(function () {
+        // var x = 20;
+        alert(x);
+    })
+</script>
+
+</html>
