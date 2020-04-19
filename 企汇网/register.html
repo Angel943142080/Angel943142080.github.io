@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: blanchedalmond;
+        }
+
+        h1 {
+            color: #dd4242;
+        }
+
+        section {
+            display: flex;
+            position: relative;
+            padding: 20px;
+            height: 80px;
+            background: white;
+        }
+
+        section>div:nth-of-type(1) {
+            position: absolute;
+            left: 20%;
+            display: flex;
+        }
+
+        section>div:nth-of-type(1)>span {
+            display: block;
+            line-height: 70px;
+            font-size: 30px;
+        }
+
+        section>div:nth-of-type(2) {
+            position: absolute;
+            right: 20%;
+        }
+
+        main {
+            width: 50%;
+            margin: auto;
+            margin-top: 100px;
+            background: white;
+        }
+
+        main>div:nth-of-type(1) {
+            padding: 30px;
+            text-align: center;
+        }
+
+        main>div:nth-of-type(1)>input {
+            width: 200px;
+            height: 30px;
+        }
+
+        main>div:nth-of-type(2) {
+            text-align: center;
+            padding: 20px;
+        }
+
+        main>div:nth-of-type(2)>button {
+            width: 100px;
+            height: 50px;
+            background: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <img src="imgs/1.png" alt="">
+            <span>会员注册</span>
+        </div>
+        <div>
+            <p>客服电话</p>
+            <h1>400-6677-369</h1>
+        </div>
+    </section>
+    <main>
+        <div>
+            <span>请输入账号</span>
+            <input class="ipt" type="text" placeholder="请输入账号">
+            <br>
+            <span>请输入密码</span>
+            <input class="ipt" type="text" placeholder="请输入密码">
+            <br>
+            <div>
+                <input id="one" checked style="margin-right: 4px;" type="checkbox">
+                <span>我已阅读并同意</span>
+                <span style="color: #dd4242;">《企汇网服务条款》</span>
+            </div>
+
+        </div>
+        <hr>
+        <div>
+            <button id="btn"><a href="">注册</a></button>
+        </div>
+    </main>
+</body>
+<script src="jquery-3.5.0.js"></script>
+<script>
+    var input = document.querySelectorAll(".ipt");
+    for (var i = 0; i < input.length; i++) {
+        $("input").on("input", function () {
+            btn.style.background = "gray";
+            if (input[0].value && input[1].value) {
+                if ($("#one").prop("checked") == true) {
+                    btn.style.background = "red";
+                }
+            }
+        })
+    }
+</script>
+
+</html>
